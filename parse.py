@@ -1,10 +1,12 @@
-import scipy as sp
+import numpy as np
 import matplotlib.pyplot as plt
+import time
 
-header = input().split(",")
-times = sp.array([])
+file_name = input()
+with open(file_name, "r") as f:
+    times = f.readlines()
 
-for i in range(6145):
-    times = sp.append(times, input.split(","))
-
-print(times[:, -1])
+for i, line in enumerate(times):
+    l = line.rstrip("\n").split(",")
+    print(f"\r {l}      ", end="")
+    time.sleep(1)
