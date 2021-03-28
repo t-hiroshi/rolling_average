@@ -1,0 +1,5 @@
+.cstimer
+__pycache__/
+
+*.png
+*.csv
