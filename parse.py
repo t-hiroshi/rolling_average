@@ -1,5 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn
+
+seaborn.set_style("darkgrid")
 
 file_name = "only_time.csv"
 with open(file_name, "r") as f:
