@@ -29,13 +29,16 @@ times = [float(s.rstrip("\n")) for s in times if not s.startswith("DNF")]
 id_start = 5500
 times = np.array(times[id_start:])
 
-times_rolling = rolling_average(times, 5)
+times_rolling = rolling_average(times, 12)
+times_rolling_12 = rolling_average(times, 50)
 
 print(f"mean: {np.mean(times)}")
 
-plt.plot(times)
-plt.plot(times_rolling)
-plt.show()
+plt.plot(times, label="row")
+plt.plot(times_rolling, label="ao5")
+plt.plot(times_rolling_12, label="ao100")
+plt.legend()
+plt.savefig("scores.png")
 
 """ plt.hist(times, bins=100, density=True)
 plt.show()
