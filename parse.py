@@ -22,8 +22,12 @@ with open(file_name, "r") as f:
 times.pop(0)
 
 # DNF を削除
+# TODO: 削除するんじゃなくて np.NaN でreplace した方が良いんじゃない？
 times = [float(s.rstrip("\n")) for s in times if not s.startswith("DNF")]
-times = np.array(times)
+
+# 添字をどこ以降から取るか
+id_start = 5500
+times = np.array(times[id_start:])
 
 times_rolling = rolling_average(times, 5)
 
