@@ -11,6 +11,7 @@ def rolling_average(row_time: int, num_rolling:int):
 
 
 file_name = "only_time.csv"
+
 with open(file_name, "r") as f:
     times = f.readlines()
 
