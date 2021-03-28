@@ -5,8 +5,11 @@ import seaborn
 seaborn.set_style("darkgrid")
 
 
-def rolling_average(row_time: int, num_rolling:int):
-    rolling_time = np.convolve(row_time, np.ones(num_rolling)/num_rolling, mode="same")
+def rolling_average(row_time: int, num: int):
+    rolling_time = np.convolve(row_time, np.ones(num)/num, mode="same")
+    # TODO: 内包リストみたいなのとかで、多分一行でフィルタできると思う
+    rolling_time[:num-1] = np.NaN
+    rolling_time[1-num:] = np.NaN
     return rolling_time
 
 
