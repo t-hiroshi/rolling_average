@@ -38,7 +38,7 @@ plt.plot(times, label="row")
 plt.plot(times_rolling, label="ao5")
 plt.plot(times_rolling_12, label="ao100")
 plt.legend()
-plt.savefig("scores.png")
+plt.savefig("scores.png", dpi=1000)
 
 """ plt.hist(times, bins=100, density=True)
 plt.show()
