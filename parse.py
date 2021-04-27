@@ -26,7 +26,7 @@ times.pop(0)
 times = [float(s.rstrip("\n")) for s in times if not s.startswith("DNF")]
 
 # 添字をどこ以降から取るか
-id_start = 5500
+id_start = len(times) - 1000
 times = np.array(times[id_start:])
 
 times_rolling = rolling_average(times, 12)
@@ -34,6 +34,7 @@ times_rolling_12 = rolling_average(times, 50)
 
 print(f"mean: {np.mean(times)}")
 
+plt.title("3×3 averages")
 plt.plot(times, label="row")
 plt.plot(times_rolling, label="ao5")
 plt.plot(times_rolling_12, label="ao100")
